@@ -19,7 +19,7 @@ def get_unread_in_category(id):
     MAX_ENTRIES = 10000 # max number of entry ids to return based on feedly doc
     client_secret = config.FEEDLY_CONFIG['CLIENT_SECRET']
     headers = {'Authorization': 'Bearer '+client_secret}
-    uri = '/v3/streams/ids?streamId='+id+'&count='+MAX_ENTRIES+'&unreadOnly=true'
+    uri = '/v3/streams/ids?streamId='+id+'&count='+str(MAX_ENTRIES)+'&unreadOnly=true'
     url = FEEDLY_URI + uri
     unread = requests.get(url=url, headers=headers).json()
     return unread
@@ -33,5 +33,15 @@ def get_categories():
     categories = requests.get(url=url, headers=headers).json()
     data = [""] * len(categories)
     for i in range(len(categories)):
-        data[i] = categories[i]['id']
+        if(categories[i]['title'] != 'Must Read'):
+            data[i] = categories[i]['id']
     return data
+def delete_category(id):
+    # id: category id
+    # delete the given category id from feedly
+    client_secret = config.FEEDLY_CONFIG['CLIENT_SECRET']
+    headers = {'Authorization': 'Bearer '+client_secret}
+    uri = '/v3/categories/' + id
+    url = FEEDLY_URI + uri
+    response = requests.delete(url=url, headers=headers).json()
+    return response
