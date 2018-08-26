@@ -2,7 +2,7 @@ import config
 import opml
 import feedparser
 
-def opmlUrlParser():
+def opml_url_parser():
     # return a dictionary (title,url)
     opmlFile = config.RSSOPT_CONFIG['opmlLocation']
     feeds = dict()
