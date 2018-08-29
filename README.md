@@ -1,5 +1,5 @@
 #config
-rename config-TEMPLATE.py to config.py and fill it with your info
+rename config-TEMPLATE.py to config.py and move to src and fill it with your info
 
 # rssOptimizer
 To optimize your rss feed. Removing duplicates and more.
