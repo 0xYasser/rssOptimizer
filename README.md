@@ -1,7 +1,7 @@
-#config
+# config
 rename config-TEMPLATE.py to config.py and move to src and fill it with your info
 
-#feedly_helper
+# feedly_helper
 this file work as init version. After filling the config file with your info run ```python3 feedly_helper.py``` it should return the request status as well as how many item was found as duplicate and marked read.  
 
 # rssOptimizer
