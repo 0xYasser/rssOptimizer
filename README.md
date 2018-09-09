@@ -9,6 +9,8 @@ To optimize your rss feed. Removing duplicates and more.
 
 ### TODO
 - [X] 3rd-party integration, feedly as a start
-- [ ] keep track of all feeds in a local file to check if you ever read it before
+- [ ] convert feedly_helper.py to a class
+- [ ] create a main in rssOptimizer.py to accept args
+- [ ] keep track of all feeds in a local DB (tinyDB) to check if you ever read it before
 - [ ] import opml
 - [ ] create new feed after filter duplicates and filter
